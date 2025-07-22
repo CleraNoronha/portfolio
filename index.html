@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clera C Noronha Portfolio</title>
+
+  <!-- ✅ Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Your custom CSS file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="intro-screen" id="intro">
+  <div class="image-button-area" onclick="enterSite()" title="Enter Portfolio"></div>
+
+</div>
+
+
+  <audio id="clickSound" src="https://www.fesliyanstudios.com/play-mp3/387" preload="auto"></audio>
+
+  <div id="portfolio">
+    <header>
+      <div class="logo">Clera Noronha</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="toggle-theme" onclick="toggleTheme()">🌓</div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Hi, I'm Clera C Noronha</h1>
+        <p>Final Year CSE Student | Web Developer & UI/UX Designer</p>
+        <button class="btn">Get In Touch</button>
+      </div>
+      <div class="hero-img">
+        <img src="https://i.imgur.com/BW1nXov.png" alt="Profile" width="200" />
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am a final-year Computer Science Engineering student from St. Joseph’s Engineering College, Mangalore, passionate about building beautiful user interfaces and scalable backend systems.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skill-container">
+        <div class="skill-category"><h3>Languages</h3><p>JavaScript | Python | MySQL | C | Java</p></div>
+        <div class="skill-category"><h3>Frameworks</h3><p>Node.js | React | MongoDB | Figma</p></div>
+        <div class="skill-category"><h3>Soft Skills</h3><p>Problem Solving | Time Management</p></div>
+      </div>
+    </section>
+
+    <section id="certificates">
+      <h2>Certificates</h2>
+      <ul>
+        <li>Nanotechnology and Nanosensors</li>
+        <li>Solidity for Ethereum</li>
+        <li>Go Standard Library</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <img src="https://i.imgur.com/bM5UJoA.png" width="100%" />
+          <h3>Resume Builder</h3>
+          <p>Web app for dynamic resume creation and download.</p>
+        </div>
+        <div class="project-card">
+          <img src="https://i.imgur.com/IQ3Aq5O.png" width="100%" />
+          <h3>Online Bookstore</h3>
+          <p>Fully functional e-commerce bookstore built with MongoDB.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-icons">
+        <a href="mailto:cleranoronha123@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/clera-noronha" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/cleranoronha" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+      <div class="resume-download">
+        <a href="images/Clera-Noronha (4).pdf" download>📄 Download Resume</a>
+
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 Clera C Noronha. All Rights Reserved.
+    </footer>
+  </div>
+
+  <script>
+    function enterSite() {
+      document.getElementById('clickSound').play();
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('portfolio').style.display = 'block';
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+  <script>
+  function enterSite() {
+    document.getElementById("portfolio").scrollIntoView({ behavior: 'smooth' });
+  }
+  </script>
+
+
+</body>
+</html>

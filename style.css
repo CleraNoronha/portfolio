@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --bg-light: #fff5f7;
+  --bg-dark: #1e1e1e;
+  --text-light: #333;
+  --text-dark: #eee;
+  --accent: #d81b60;
+  --header-bg-light: #ffeef2;
+  --header-bg-dark: #2c2c2c;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-light);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* === Intro Screen === */
+
+.intro-screen {
+  height: 100vh;
+  width: 100%;
+  background-image: url('images/cherry-blossom-front.png') !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-color: #000; /* fallback if image fails */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.intro-screen h1 {
+  font-size: 2.5rem;
+  max-width: 90vw;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  margin: 0 auto;
+  animation: typing 3s steps(25, end), blink 0.75s step-end infinite;
+}
+
+@media (max-width: 600px) {
+  .intro-screen h1 {
+    font-size: 1.6rem;
+  }
+}
+
+.intro-screen .subtitle {
+  font-size: 18px;
+  color: #fce4ec;
+  margin-bottom: 30px;
+  animation: fadeInUp 2s ease forwards;
+}
+
+.intro-screen button {
+  padding: 12px 36px;
+  font-size: 16px;
+  border-radius: 25px;
+  border: none;
+  background: #ec407a;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 2.4s ease forwards;
+}
+
+.intro-screen button:hover {
+  background: #d81b60;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* === Floating Petals === */
+.petals {
+  pointer-events: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.petal {
+  position: absolute;
+  width: 20px; height: 20px;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/744/744922.png');
+  background-size: cover;
+  opacity: 0.8;
+  animation: fall 10s linear infinite;
+}
+
+/* === Main Portfolio === */
+#portfolio {
+  margin-top: 100vh;
+  background: var(--bg-light);
+  height: auto;
+  min-height: 100vh;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: var(--header-bg-light);
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  animation: fadeInDown 1s ease-in-out;
+}
+
+body.dark-mode header {
+  background: var(--header-bg-dark);
+}
+
+.nav-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #b23a48;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  transform: scale(1.1);
+}
+
+/* === Hero Section === */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #ffeef2, #fff5f7);
+  animation: fadeInUp 1.4s ease both;
+  background-attachment: fixed;
+}
+
+.hero-content {
+  max-width: 500px;
+  animation: slideInLeft 1.2s ease both;
+}
+
+.hero-img img {
+  max-width: 250px;
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  animation: zoomIn 1.2s ease both;
+}
+
+/* === Section Blocks === */
+section {
+  padding: 60px 20px;
+  animation: fadeBlock 1s ease-in-out both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+}
+
+section h2 {
+  text-align: center;
+  font-size: 32px;
+  color: var(--accent);
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease forwards;
+}
+
+/* === Skills & Projects === */
+.skill-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.skill-category, .project-card {
+  width: 300px;
+  background: #fff0f5;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeBlock 0.8s ease forwards;
+}
+
+.skill-category:hover, .project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  background: #ffe4ec;
+}
+
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* === Contact Icons === */
+.contact-icons a {
+  margin: 0 10px;
+  color: #b23a48;
+  transition: transform 0.2s ease;
+}
+
+.contact-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* === Resume Download === */
+.resume-download {
+  display: block;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.resume-download a {
+  background: #ec407a;
+  padding: 12px 28px;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s;
+  display: inline-block;
+  max-width: 90%;
+}
+
+.resume-download a:hover {
+  background: #d81b60;
+}
+
+/* === Theme Toggle === */
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ec407a;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  background: #ffeef2;
+}
+
+/* === Animations === */
+@keyframes fall {
+  0% { transform: translateY(-100px) rotate(0); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeBlock {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.click-overlay {
+  position: absolute;
+  top: 56.5%;
+  left: 34.5%;
+  width: 160px;
+  height: 48px;
+  cursor: pointer;
+  z-index: 10;
+  background: transparent;
+  /* Optional for debugging: */
+  /* border: 2px dashed red; */
+}
+.image-button-area {
+  position: absolute;
+  top: 63%;         /* Vertical position (adjust until perfect) */
+  left: 71%;        /* Start at center */
+  transform: translateX(-50%);  /* Center the box horizontally */
+  width: 290px;     /* Match the text width */
+  height: 60px;     /* Match the text height */
+  cursor: pointer;
+  z-index: 10;
+  background-color: transparent;
+  /*border: 2px dashed red; */
+}
